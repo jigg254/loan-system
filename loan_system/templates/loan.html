@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Loan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Issue Loan</h1>
+
+<form method="POST">
+    <label>Borrower:</label><br>
+    <select name="borrower" required>
+        {% for borrower in borrowers %}
+        <option value="{{ borrower.id }}">{{ borrower.name }}</option>
+        {% endfor %}
+    </select><br>
+    <label>Loan Amount:</label><br>
+    <input type="number" name="amount" required><br>
+    <label>Interest (%):</label><br>
+    <input type="number" name="interest" required><br>
+    <label>Repayment Days:</label><br>
+    <input type="number" name="days" required><br><br>
+    <button type="submit">Issue Loan</button>
+</form>
+
+<br>
+<a href="/">Back to Dashboard</a>
+
+</body>
+</html>

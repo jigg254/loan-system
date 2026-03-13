@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Borrower Profile</title>
+</head>
+
+<body>
+
+<h1>{{ borrower.name }}</h1>
+
+<p>Phone: {{ borrower.phone }}</p>
+
+<p>ID: {{ borrower.id_number }}</p>
+
+
+<h2>Loans</h2>
+
+<table border="1">
+
+<tr>
+
+<th>Loan ID</th>
+
+<th>Total</th>
+
+<th>Daily Payment</th>
+
+<th>Expected Paid</th>
+
+<th>Actual Paid</th>
+
+<th>Arrears</th>
+
+</tr>
+
+
+{% for item in loan_data %}
+
+<tr>
+
+<td>{{ item.loan.id }}</td>
+
+<td>{{ item.loan.total }}</td>
+
+<td>{{ item.loan.daily_payment }}</td>
+
+<td>{{ item.expected }}</td>
+
+<td>{{ item.paid }}</td>
+
+<td>{{ item.arrears }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+<br>
+
+<a href="/borrowers">Back to Borrowers</a>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Loan Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+padding:20px;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1{
+margin-bottom:30px;
+}
+
+.metric{
+font-size:28px;
+font-weight:bold;
+color:#2c3e50;
+}
+
+.alert{
+color:red;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Lending Dashboard</h1>
+
+<div class="dashboard">
+
+<div class="card">
+Total Portfolio
+<div class="metric">{{ total_portfolio }}</div>
+</div>
+
+<div class="card">
+Total Collected
+<div class="metric">{{ total_collected }}</div>
+</div>
+
+<div class="card">
+Outstanding Balance
+<div class="metric">{{ outstanding }}</div>
+</div>
+
+<div class="card">
+Borrowers
+<div class="metric">{{ borrowers }}</div>
+</div>
+
+<div class="card">
+Active Loans
+<div class="metric">{{ loans }}</div>
+</div>
+
+<div class="card">
+Today's Collections
+<div class="metric">{{ todays_collections }}</div>
+</div>
+
+<div class="card">
+Loans Due Today
+<div class="metric">{{ loans_due_today }}</div>
+</div>
+
+<div class="card">
+Loans In Arrears
+<div class="metric alert">{{ loans_in_arrears }}</div>
+</div>
+
+</div>
+
+<br><br>
+
+<a href="/borrowers">View Borrowers</a> |
+<a href="/loan">Issue Loan</a> |
+<a href="/payment">Record Payment</a> |
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

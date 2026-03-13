@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Borrowers</title>
+</head>
+
+<body>
+
+<h1>Borrowers</h1>
+
+<a href="/add_borrower">Add Borrower</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>ID Number</th>
+</tr>
+
+{% for b in borrowers %}
+
+<tr>
+
+<td>
+<a href="/borrower/{{ b.id }}">
+{{ b.name }}
+</a>
+</td>
+
+<td>{{ b.phone }}</td>
+
+<td>{{ b.id_number }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
